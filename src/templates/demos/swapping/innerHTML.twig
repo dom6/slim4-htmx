@@ -1,0 +1,15 @@
+<h2>innerHTML</h2>
+<p>The default, puts the content inside the target element</p>
+<pre>
+<code class="language-html">
+<script type="prism-html-markup">
+    <form hx-post='/your-apps-endpoint' hx-target="#response" hx-swap="innerHTML">
+        <!-- form fields or other content -->
+        <button type="submit">Submit</button>
+    </form>
+    <div id="response">
+        <!-- The contents of the response are placed here... -->
+    </div>
+</script>
+</code>
+</pre>

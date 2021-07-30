@@ -1,0 +1,16 @@
+<h2>outerHTML</h2>
+<p>Replaces the entire target element with the returned content</p>
+<pre>
+<code class="language-html">
+<script type="prism-html-markup">
+    <form hx-post='/your-apps-endpoint' hx-target="#response" hx-swap="outerHTML">
+        <!-- form fields or other content -->
+        <button type="submit">Submit</button>
+    </form>
+    <!-- The #response div is replaced -->
+    <div id="response">
+    </div>
+    <!-- end replacement -->
+</script>
+</code>
+</pre>

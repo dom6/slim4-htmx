@@ -1,0 +1,19 @@
+<h2>none</h2>
+<p>Does not append content from response (out of band items will still be processed)</p>
+
+<pre>
+<code class="language-html">
+<script type="prism-html-markup">
+    <div id="formWrapper">
+        <form hx-post='/your-apps-endpoint' hx-target="#response" hx-swap="none">
+            <!-- form fields or other content -->
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="response">
+            <!-- nothing happens here, but based on your response it could happen elsewhere -->
+        </div>
+    </div>
+</script>
+</code>
+</pre>

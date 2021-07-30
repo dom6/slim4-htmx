@@ -1,0 +1,52 @@
+<div id="slide">
+    <h1 class="p-4 text-5xl font-bold">hx-swapping</h1>
+    <div class="bg-white grid grid-cols-1 md:grid-cols-2 gap-4 auto-cols-max">
+        <div class="p-4">
+            {% include 'demos/simple-form-append-results.twig' %}
+        </div>
+        <div class="p-4">
+
+<pre>
+<code class="language-html">
+<script type="prism-html-markup">
+    <form hx-get="{{ url_for('simple-append-results') }}"
+          hx-indicator="loadingIndicator"
+          hx-swap="beforeend"
+          hx-target="#contactList">
+        <label for="firstname">First Name</label>
+        <input type="text" id="firstname" name="firstname" value="" />
+
+        <label for="lastname">Last Name</label>
+        <input type="text" id="lastname" name="lastname" value="" />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" value="" />
+
+        <button type="submit">Submit</button>
+    </form>
+    <span id="loadingIndicator">Sending request...</span>
+    <div id="contactList">
+        <div>
+            <p>Test Test<br>
+               test@test.com</p>
+        </div>
+    </div>
+</script>
+</code>
+</pre>
+
+        </div>
+    </div>
+
+    <div class="slide-nav">
+        <button class="slide-nav__button"
+                type="button"
+                hx-get="{{ url_for('update-slide', { 'id' : '5' }) }}"
+                hx-target="#slide">Previous</button>
+
+        <button class="slide-nav__button"
+                type="button"
+                hx-get="{{ url_for('update-slide', { 'id' : '7' }) }}"
+                hx-target="#slide">Next</button>
+    </div>
+</div>

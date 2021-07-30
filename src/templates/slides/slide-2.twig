@@ -1,0 +1,51 @@
+<div id="slide" class="bg-white">
+    <div class="bg-white grid grid-cols-1 max-w-4xl m-auto">
+        <section class>
+            <header>
+                <h1>What is HTML Over the Wire?</h1>
+            </header>
+
+            <p>Returning HTML instead of JSON (or other data format) to a controlled application specific endpoint.</p>
+
+            <h2>What lead to this development process?</h2>
+            <ul class="list-disc">
+                <li>Application requirements (tight deadlines)</li>
+                <li>Curiosity and experience with complex javascript libraries</li>
+                <li>Realizing we were developing more than we needed to.</li>
+                <li>A desire to put more processing weight on the server.</li>
+            </ul>
+
+            <h2>What are some libraries?</h2>
+            <ul class="list-disc">
+                <li>HTMX</li>
+                <li>Unpoly</li>
+                <li>Hotwire</li>
+                <li>Laravel Livewire</li>
+                <li>Phoenix LiveView</li>
+            </ul>
+
+            <h2>Why use HTML over the wire via HTMX?</h2>
+            <ul class="list-disc">
+                <li>Simplify your life!</li>
+                <li>Faster development times - No need to build separate frontend and backend applications</li>
+                <li>State management can be on the server</li>
+                <li>Consistent enforcement of validation rules</li>
+                <li>Reduced complexity - easy to learn</li>
+                <li>What is the browser really good at?  Displaying HTML</li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- Slide Navigation -->
+    <div class="slide-nav">
+        <button class="slide-nav__button"
+                type="button"
+                hx-get="{{ url_for('update-slide', { 'id' : '1' }) }}"
+                hx-target="#slide">Previous</button>
+
+        <button class="slide-nav__button"
+                type="button"
+                hx-get="{{ url_for('update-slide', { 'id' : '3' }) }}"
+                hx-target="#slide">Next</button>
+    </div>
+</div>

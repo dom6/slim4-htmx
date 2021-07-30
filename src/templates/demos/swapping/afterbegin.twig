@@ -1,0 +1,18 @@
+<h2>afterbegin</h2>
+<p>Prepends the content before the first child inside the target</p>
+<pre>
+<code class="language-html">
+<script type="prism-html-markup">
+    <form hx-post='/your-apps-endpoint' hx-target="#response" hx-swap="afterbegin">
+        <!-- form fields or other content -->
+        <button type="submit">Submit</button>
+    </form>
+    <div id="response">
+        <!-- The response would be placed here. Before the .item div -->
+        <div class="item">
+            <!-- This item existed prior to the request / response -->
+        </div>
+    </div>
+</script>
+</code>
+</pre>

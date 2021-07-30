@@ -1,0 +1,62 @@
+<div id="slide">
+    <h1 class="p-4 text-5xl font-bold">hx-include</h1>
+    <div class="bg-white grid grid-cols-1 md:grid-cols-2 gap-4 auto-cols-max">
+        <div class="p-4">
+            <form>
+                {% include 'demos/fields/arrangement-type.twig' %}
+            </form>
+        </div>
+        <div class="p-4">
+<pre>
+<code class="language-html">
+<script type="prism-html-markup">
+    <label for="location">Location</label>
+    <select name="location"
+            id="location"
+            hx-get="/path/to/endpoint"
+            hx-trigger="change"
+            hx-target="#dates"
+            hx-swap="innerHTML"
+            hx-include="#startDate, #endDate">
+        <option value="Iowa">Iowa</option>
+        <option value="Domestic">Outside Iowa, but inside the US</option>
+        <option value="International">Outside of the US</option>
+    </select>
+
+    <div id="dates">
+        <label for="startDate">Start Date</label>
+        <input type="date"
+               name="startDate"
+               id="startDate"
+               hx-get="/path/to/endpoint"
+               hx-trigger="blur throttle:100ms"
+               hx-include="#location, #endDate" />
+
+        <label for="endDate">End Date</label>
+        <input type="date"
+               name="endDate"
+               id="endDate"
+               hx-get="/path/to/endpoint"
+               hx-trigger="blur throttle:100ms"
+               hx-include="#location, #startDate" />
+    </div>
+</script>
+</code>
+</pre>
+        </div>
+    </div>
+
+    <div class="slide-nav">
+        <button class="slide-nav__button"
+                type="button"
+                hx-get="{{ url_for('update-slide', { 'id' : '8' }) }}"
+                hx-target="#slide">Previous</button>
+
+        <button class="slide-nav__button"
+                type="button"
+                hx-get="{{ url_for('update-slide', { 'id' : '10' }) }}"
+                hx-target="#slide">Next</button>
+    </div>
+</div>
+
+

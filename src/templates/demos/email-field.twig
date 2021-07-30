@@ -1,0 +1,13 @@
+<div id="emailAddressPartial" class="mb-4">
+    <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+    <input type="text" id="email" name="email" value="{{ EMAIL_ADDRESS }}"
+        hx-get="{{ url_for('validate-email') }}"
+        hx-swap="outerHTML"
+        hx-trigger="blur"
+        hx-target="#emailAddressPartial"
+        autocomplete="off"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+    {% if INVALID_EMAIL_ADDRESS %}
+        <p class="text-red-500 text-xs italic pt-1">Please provide a valid email address</p>
+    {% endif %}
+</div>

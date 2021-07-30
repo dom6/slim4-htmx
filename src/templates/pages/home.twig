@@ -1,0 +1,26 @@
+{% extends "./layouts/base.twig" %}
+
+{% block title %}
+    {{ title }}
+{% endblock title %}
+
+{% block content %}
+
+    <main role="main" class="grid grid-col-1 max-w-4xl m-auto px-4 pt-8">
+        <h1>{{ title }}</h1>
+
+        <h2>About</h2>
+        <p>I'm Bob. I'm a developer in Information Management - Human Resources.</p>
+        <a href="https://github.com/dom6/slim4-htmx" class="btn">https://github.com/dom6/slim4-htmx</a>
+
+        <h2>Slides &amp; Demos</h2>
+        <p>Presentation slides highlighting the ease of working with HTMX and a framework like Slim4.</p>
+        <a href="{{ url_for('slides') }}" class="btn">View Slides</a>
+
+        <h2>Resources</h2>
+        <p>Resources from around the web that may help you learn more about HTML Over the Wire</p>
+        <a href="{{ url_for('resources') }}" class="btn">View Resources</a>
+    </main>
+
+{% endblock content %}
+

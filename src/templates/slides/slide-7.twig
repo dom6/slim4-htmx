@@ -1,0 +1,34 @@
+<div id="slide" class="animate-stretch">
+    <div class="bg-white grid grid-cols-1 max-w-4xl m-auto">
+        <div class="p-4">
+            <h1 class="text-5xl font-bold">hx-swapping <small class="font-light text-gray-400">(cont'd)</small></h1>
+            <p>Descriptions from <a href="https://htmx.org/docs/#swapping">htmx.org</a>.</p>
+
+            {% include '/demos/swapping/innerHTML.twig' %}
+            <hr>
+            {% include '/demos/swapping/outerHTML.twig' %}
+            <hr>
+            {% include '/demos/swapping/afterbegin.twig' %}
+            <hr>
+            {% include '/demos/swapping/beforeend.twig' %}
+            <hr>
+            {% include '/demos/swapping/beforebegin.twig' %}
+            <hr>
+            {% include '/demos/swapping/afterend.twig' %}
+            <hr>
+            {% include '/demos/swapping/none.twig' %}
+        </div>
+    </div>
+
+    <div class="slide-nav">
+        <button class="slide-nav__button"
+                type="button"
+                hx-get="{{ url_for('update-slide', { 'id' : '6' }) }}"
+                hx-target="#slide">Previous</button>
+
+        <button class="slide-nav__button"
+                type="button"
+                hx-get="{{ url_for('update-slide', { 'id' : '8' }) }}"
+                hx-target="#slide">Next</button>
+    </div>
+</div>

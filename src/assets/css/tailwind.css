@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+
+h1 {
+    @apply font-sans mt-0 mb-3.5 text-4xl leading-tight font-extrabold
+}
+
+h2 {
+    @apply font-sans font-bold text-2xl leading-5 mt-8 mb-4
+}
+
+h3 {
+    @apply font-sans font-bold leading-5 mt-4 mb-2
+}
+
+a {
+    @apply text-blue-500
+}
+
+p {
+    @apply font-sans text-base leading-7 mb-5 text-gray-600
+}
+
+hr {
+    @apply my-8
+}
+
+.field__label {
+    @apply text-gray-700 text-sm font-bold mb-2
+}
+
+.field__label--block {
+    @apply block
+}
+
+.field__input {
+    @apply shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline
+}
+
+.field__help {
+    @apply text-xs pt-1
+}
+
+.field__help--error {
+    @apply text-red-500 italic
+}
+
+.btn {
+    @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-max
+}
+
+.primary-nav {
+    @apply flex items-center justify-between flex-wrap bg-gray-800 p-6
+}
+
+.primary-nav a {
+    @apply text-white ml-5
+}
+
+.slide-nav {
+    @apply fixed bottom-0 inline-flex
+}
+
+.slide-nav .slide-nav__button {
+    @apply bg-gray-800 hover:bg-gray-700 text-gray-300 font-bold py-2 px-4 mr-1
+}
+
+/* Animations */
+.animate-stretch {
+    width: 100%;
+    height: 100%;
+    animation: stretch 300ms ease-out;
+}
+
+@keyframes stretch {
+    0% {
+        transform: scale(.3);
+        opacity: .1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 1000ms linear;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+@tailwind utilities;

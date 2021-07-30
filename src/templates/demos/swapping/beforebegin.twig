@@ -1,0 +1,18 @@
+<h2>beforebegin</h2>
+<p>Prepends the content before the target in the targets parent element</p>
+<pre>
+<code class="language-html">
+<script type="prism-html-markup">
+    <div id="formWrapper">
+        <form hx-post='/your-apps-endpoint' hx-target="#response" hx-swap="beforebegin">
+            <!-- form fields or other content -->
+            <button type="submit">Submit</button>
+        </form>
+
+        <!-- The response would be placed here. Before the #response div -->
+        <div id="response">
+        </div>
+    </div>
+</script>
+</code>
+</pre>

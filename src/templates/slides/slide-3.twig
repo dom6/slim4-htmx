@@ -1,0 +1,72 @@
+<div id="slide">
+    <div class="bg-white grid grid-cols-1 md:grid-cols-2 gap-4 auto-cols-max">
+
+        <!-- Get request demo -->
+        <div class="p-4">
+            <h2 class="text-5xl">hx-get</h2>
+            {% include 'demos/simple-get-form.twig' %}
+
+<pre>
+<code class="language-html">
+<script type="prism-html-markup">
+    <form hx-get="{{ url_for('simple-get-form') }}">
+        <label for="firstname">First Name</label>
+        <input type="text" id="firstname" name="firstname" value="" />
+
+        <label for="lastname">Last Name</label>
+        <input type="text" id="lastname" name="lastname" value="" />
+
+        <button type="submit">Submit</button>
+    </form>
+</script>
+</code>
+</pre>
+        </div>
+
+        <!-- Post request demo -->
+        <div class="p-4">
+            <h2 class="text-5xl">hx-post</h2>
+            <p>Note: hx-put, hx-patch, and hx-delete are also supported</p>
+            {% include 'demos/simple-post-form.twig' %}
+<pre>
+<code class="language-html">
+<script type="prism-html-markup">
+    <form hx-post="{{ url_for('simple-post-form') }}">
+        <label for="firstname">First Name</label>
+        <input type="text" id="firstname" name="firstname" value="" />
+
+        <label for="lastname">Last Name</label>
+        <input type="text" id="lastname" name="lastname" value="" />
+
+        <button type="submit">Submit</button>
+    </form>
+</script>
+</code>
+</pre>
+
+<pre>
+<code class="language-javascript">
+<script type="prism-javascript-markup">
+    // Got CSRF?
+    document.body.addEventListener('htmx:configRequest', (event) => {
+        event.detail.headers['X-CSRFToken'] = 'The CSRF Token';
+    })
+</script>
+</code>
+</pre>
+        </div>
+    </div>
+
+    <div class="slide-nav">
+        <button class="slide-nav__button"
+                type="button"
+                hx-get="{{ url_for('update-slide', { 'id' : '2' }) }}"
+                hx-target="#slide">Previous</button>
+
+        <button class="slide-nav__button"
+                type="button"
+                hx-get="{{ url_for('update-slide', { 'id' : '4' }) }}"
+                hx-target="#slide">Next</button>
+    </div>
+</div>
+

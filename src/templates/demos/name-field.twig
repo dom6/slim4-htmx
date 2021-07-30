@@ -1,0 +1,13 @@
+<div id="namePartial" class="mb-4">
+    <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
+    <input type="text" id="name" name="name" value="{{ NAME }}"
+        hx-get="{{ url_for('validate-name') }}"
+        hx-swap="outerHTML"
+        hx-trigger="blur"
+        hx-target="#namePartial"
+        autocomplete="off"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+    {% if NAME_IS_EMPTY %}
+        <p class="text-red-500 text-xs italic pt-1">Please provide a name</p>
+    {% endif %}
+</div>

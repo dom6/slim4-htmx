@@ -1,0 +1,51 @@
+<div id="slide">
+    <h1 class="p-4 pb-0 text-5xl font-bold">hx-oob-swap</h1>
+    <p class="pl-4">Out of Band Swapping</p>
+    <div class="bg-white grid grid-cols-1 md:grid-cols-2 gap-4 auto-cols-max">
+        <div class="p-4">
+            <form hx-post="{{ url_for('out-of-band-swap') }}"
+                  hx-target="#response"
+                  hx-swap="innerHTML"
+            >
+
+                {% include 'demos/name-field.twig' %}
+                <button type="submit" class="btn">Submit</button>
+            </form>
+            <div id="response" class="mt-4"></div>
+
+            <h3>The Response</h3>
+            <pre>
+<code class="language-html">
+<script type="prism-html-markup">
+    <p>Thanks for the request</p>
+
+    <!-- Any content marked with hx-oob-swap will be
+         swapped into the DOM based on the id -->
+    <div id='textToSwap' hx-oob-swap="true">
+        <!-- In this case, any text with #textToSwap replaced in the DOM -->
+    </div>
+</script>
+</code>
+</pre>
+        </div>
+        <div class="p-4">
+            <div id="textToSwap">
+                <p>This is some text that will be swapped out.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-nav">
+        <button class="slide-nav__button"
+                type="button"
+                hx-get="{{ url_for('update-slide', { 'id' : '7' }) }}"
+                hx-target="#slide">Previous</button>
+
+        <button class="slide-nav__button"
+                type="button"
+                hx-get="{{ url_for('update-slide', { 'id' : '9' }) }}"
+                hx-target="#slide">Next</button>
+    </div>
+</div>
+
+

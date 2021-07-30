@@ -1,0 +1,11 @@
+{% extends "./layouts/slideshow.twig" %}
+
+{% block title %}
+{% endblock title %}
+
+{% block content %}
+    <div class="h-screen">
+        {% include './slides/slide-' ~ number ~ '.twig' %}
+    </div>
+{% endblock content %}
+

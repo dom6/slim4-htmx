@@ -1,0 +1,16 @@
+{% if RESULTS %}
+    <p>{{ RESULTS | length }} results found</p>
+    {% for PRODUCT in RESULTS %}
+        <div class="flex justify-between items-center mt-6 pt-6">
+            <div class="flex items-center">
+                <div class="bg-gray-500 rounded-full" style="width: 60px; height: 60px;">&nbsp;</div>
+                <div class="flex flex-col ml-3"><span class="md:text-md font-medium">{{ PRODUCT.name }}</span> <span class="text-xs font-light text-gray-400">{{ PRODUCT.description }}</span> </div>
+            </div>
+            <div class="flex justify-center items-center">
+                <div class="pr-8 "><span class="font-medium">${{ PRODUCT.price }}</span> </div>
+            </div>
+        </div>
+    {% endfor %}
+{% elseif QUERY %}
+    <p>There are no results for <em>{{ QUERY }}</em></p>
+{% endif %}

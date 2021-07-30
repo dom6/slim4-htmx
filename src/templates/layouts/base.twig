@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>{% block title%}{% endblock %}</title>
+
+        <link href="/dist/tailwind.css" rel="stylesheet">
+    </head>
+    <body>
+
+        <nav class="primary-nav">
+            <h1 class="text-2xl text-bold mr-auto mb-0"><a href="{{ url_for('home') }}">HTML Over the Wire</a></h1>
+            <a href="{{ url_for('resources') }}">Resources</a>
+            <a href="{{ url_for('slides') }}">Slides</a>
+        </nav>
+        {% block content %}
+        {% endblock content %}
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<div id="slide">
+    <h1 class="p-4 text-5xl font-bold">hx-indicator</h1>
+    <div class="bg-white grid grid-cols-1 md:grid-cols-2 gap-4 auto-cols-max">
+        <div class="p-4">
+            {% include 'demos/simple-form-with-indicator.twig' %}
+
+            <div id="response"></div>
+        </div>
+        <div class="p-4">
+<pre>
+<code class="language-html">
+<script type="prism-html-markup">
+    <form hx-get="{{ url_for('simple-get-with-indicator') }}"
+          hx-indicator="loadingIndicator"
+          hx-target="#response">
+        <label for="firstname">First Name</label>
+        <input type="text" id="firstname" name="firstname" value="" />
+
+        <label for="lastname">Last Name</label>
+        <input type="text" id="lastname" name="lastname" value="" />
+
+        <button type="submit">Submit</button>
+    </form>
+    <span id="loadingIndicator">Sending request...</span>
+    <div id="response"></div>
+</script>
+</code>
+</pre>
+        </div>
+    </div>
+
+    <div class="slide-nav">
+        <button class="slide-nav__button"
+                type="button"
+                hx-get="{{ url_for('update-slide', { 'id' : '4' }) }}"
+                hx-target="#slide">Previous</button>
+
+        <button class="slide-nav__button"
+                type="button"
+                hx-get="{{ url_for('update-slide', { 'id' : '6' }) }}"
+                hx-target="#slide">Next</button>
+    </div>
+</div>
+

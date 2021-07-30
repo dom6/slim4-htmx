@@ -1,0 +1,28 @@
+<div class="mb-4">
+    <label for="endDate" class="block text-gray-700 text-sm font-bold mb-2">End Date</label>
+    <input type="date"
+           name="endDate"
+           id="endDate"
+           hx-get="{{ url_for('include') }}"
+           hx-include="#startDate, #workLocation"
+           hx-target="#dates"
+           hx-trigger="blur throttle:100ms"
+           class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="{{ END_DATE }}" />
+
+    {% if MESSAGES.ERROR_INVALID_END_DATE %}
+        <p class="text-red-500 text-xs italic pt-1">The end date is invalid</p>
+    {% endif %}
+    {% if MESSAGES.ERROR_END_DATE_BEFORE_START_DATE %}
+        <p class="text-red-500 text-xs italic pt-1">The end date cannot be on or before the start date</p>
+    {% endif %}
+    {% if MESSAGES.ERROR_END_DATE_CANNOT_BE_EMPTY %}
+        <p class="text-red-500 text-xs italic pt-1">Please provide an end date</p>
+    {% endif %}
+    {% if MESSAGES.ERROR_DOMESTIC_END_DATE_OOB %}
+        <p class="text-red-500 text-xs italic pt-1">The end date is greater than 1 year from start date</p>
+    {% endif %}
+    {% if MESSAGES.ERROR_INTERNATIONAL_END_DATE_OOB %}
+        <p class="text-red-500 text-xs italic pt-1">The end date is greater than 200 days from start date</p>
+    {% endif %}
+
+</div>

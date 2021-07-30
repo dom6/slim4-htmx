@@ -1,0 +1,18 @@
+<h2>beforeend</h2>
+<p>Appends the content after the last child inside the target</p>
+<pre>
+<code class="language-html">
+<script type="prism-html-markup">
+    <form hx-post='/your-apps-endpoint' hx-target="#response" hx-swap="outerHTML">
+        <!-- form fields or other content -->
+        <button type="submit">Submit</button>
+    </form>
+    <div id="response">
+        <div class="item">
+            <!-- This item existed prior to the request / response -->
+        </div>
+        <!-- The response would be placed here. After the .item div -->
+    </div>
+</script>
+</code>
+</pre>

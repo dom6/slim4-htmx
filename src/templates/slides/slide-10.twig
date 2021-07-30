@@ -1,0 +1,51 @@
+<div id="slide">
+    <h1 class="p-4 text-5xl font-bold">Search Demo</h1>
+    <div class="bg-white grid grid-cols-1 md:grid-cols-2 gap-4 auto-cols-max">
+        <div class="p-4">
+            <label for="q" class="block text-gray-700 text-sm font-bold mb-2">Search</label>
+            <input type="text"
+                   name="q"
+                   id="q"
+                   hx-trigger="keyup delay:100ms"
+                   hx-get="{{ url_for('search') }}"
+                   hx-target="#searchResults"
+                   hx-swap="innerHTML"
+                   class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                   value="" />
+
+            <div id="searchResults"></div>
+        </div>
+        <div class="p-4">
+<pre>
+<code class="language-html">
+<script type="prism-html-markup">
+    <label for="q">Search</label>
+    <input type="text"
+           name="q"
+           id="q"
+           hx-trigger="keyup delay:100ms"
+           hx-get="/search"
+           hx-target="#searchResults"
+           hx-swap="innerHTML" />
+
+    <div id="searchResults"></div>
+</script>
+</code>
+</pre>
+        </div>
+    </div>
+
+    <div class="slide-nav">
+        <button class="slide-nav__button"
+                type="button"
+                hx-get="{{ url_for('update-slide', { 'id' : '9' }) }}"
+                hx-target="#slide">Previous</button>
+
+        <button class="slide-nav__button"
+                type="button"
+                hx-get="{{ url_for('update-slide', { 'id' : '11' }) }}"
+                hx-target="#slide">Next</button>
+    </div>
+</div>
+
+

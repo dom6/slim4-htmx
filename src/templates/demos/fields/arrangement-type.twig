@@ -1,0 +1,24 @@
+<div class="mb-4">
+    <label for="workLocation" class="block text-gray-700 text-sm font-bold mb-2">Work Location</label>
+    <select id="workLocation"
+            name="workLocation"
+            hx-get="{{ url_for('include') }}"
+            hx-trigger="change"
+            hx-target="#dates"
+            hx-swap="innerHTML"
+            hx-include="#startDate, #endDate"
+            class="block w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+        <option value="Iowa" selected>Iowa</option>
+        <option value="Domestic">Outside Iowa, inside the United States</option>
+        <option value="International">Outside of the United States</option>
+    </select>
+
+    {% if INVALID_OPTION %}
+        <p>An invalid value has been selected</p>
+    {% endif %}
+</div>
+
+<div id="dates">
+    {% include 'demos/fields/start-date.twig' %}
+    {% include 'demos/fields/end-date.twig' %}
+</div>

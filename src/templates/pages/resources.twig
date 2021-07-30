@@ -1,0 +1,43 @@
+{% extends "./layouts/base.twig" %}
+
+{% block title %}
+    {{ title }}
+{% endblock title %}
+
+{% block content %}
+<main role="main" class="grid grid-col-1 max-w-4xl m-auto px-4 pt-8">
+    <header>
+        <h1>Resources</h1>
+    </header>
+
+    <h2>Libraries</h2>
+    <p>These libraries all support HTML over the wire to various levels.  For the examples in this repository I've chosen HTMX. HTMX is great, but I encourage you to review these and decide which one may be best for you.</p>
+    <ul class="list-disc pl-4">
+        <li><a href="https://htmx.org">Htmx.org</a></li>
+        <li><a href="https://hotwire.dev/">Hotwire</a></li>
+        <li><a href="https://unpoly.com/">Unpoly</a></li>
+        <li><a href="https://laravel-livewire.com/">Laravel Livewire</a> - (PHP)</li>
+        <li><a href="https://github.com/phoenixframework/phoenix_live_view">Phoenix Live View</a> - (Elixir)</li>
+    </ul>
+
+    <h2>Articles &amp; Threads</h2>
+
+    <h3>HTML Over the Wire</h3>
+    <ul class="list-disc pl-4">
+        <li><a href="https://alistapart.com/article/the-future-of-web-software-is-html-over-websockets/">A List Apart - <em>The Future of Web Software Is HTML-over-WebSockets</em></a></li>
+        <li><a href="https://www.youtube.com/watch?v=SWEts0rlezA">Sam Stevenson's presentation: <em>RailsConf 2016 - Turbolinks 5: I Can’t Believe It’s Not Native!</em></a></li>
+        <li><a href="https://changelog.com/podcast/435">Changelog Podcast</a></li>
+    </ul>
+
+    <h3>HTMX</h3>
+    <ul class="list-disc pl-4">
+        <li><a href="https://github.com/rajasegar/awesome-htmx">rajasegar's list of HTMX resources</a> on Github</li>
+        <li><a href="https://htmx.org/extensions/client-side-templates/">Client-side-templates Extension</a></li>
+        <li><a href="https://marcus-obst.de/blog/htmx-json-handling">Using HTMX to process JSON with the <em>client-side-templates</em> extension</a></li>
+        <li><a href="https://htmx.org/examples/">HTMX demo's and examples</a></li>
+        <li><a href="https://stackoverflow.com/questions/tagged/htmx">HTMX questions on Stack Overflow</a></li>
+        <li><a href="https://vincentsaulys.com/htmx-cheat-sheet.html">Vincent Sauly's HTMX Cheat Sheet</a></li>
+    </ul>
+
+</main>
+{% endblock content %}

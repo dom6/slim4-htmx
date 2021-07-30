@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>{% block title %}{% endblock %}</title>
+
+        <link href="/dist/tailwind.css" rel="stylesheet">
+        <link rel="stylesheet" href="/dist/prism-htmx.css">
+        <script src="/dist/js/htmx.min.js"></script>
+    </head>
+    <body>
+        {% block content %}
+        {% endblock content %}
+    <script src="https://unpkg.com/prismjs@1.20.0/components/prism-core.min.js"></script>
+    <script src="https://unpkg.com/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js"></script>
+        <script>
+            htmx.logAll();
+            htmx.onLoad(function(){
+                Prism.highlightAll();
+            });
+        </script>
+    </body>
+</html>

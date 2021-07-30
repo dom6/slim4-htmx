@@ -1,0 +1,18 @@
+<div id="slide">
+    <section class="h-screen lg:container lg:mx-auto p-8 lg:p-80">
+        <header>
+            <h1 class="text-7xl font-bold text-center">HTML Over the Wire</h1>
+            <p class="text-center text-3xl text-yellow-300">Javascript without Javascript</p>
+        </header>
+
+    </section>
+
+    <div class="slide-nav">
+        <button class="slide-nav__button"
+            type="button"
+            hx-get="{{ url_for('update-slide', { 'id' : '2' }) }}"
+            hx-target="#slide">Next</button>
+    </div>
+</div>
+
+

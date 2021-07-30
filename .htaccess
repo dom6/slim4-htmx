@@ -1,0 +1,25 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.php [QSA,L]
+</IfModule>
+
+<Files .htaccess>
+Order allow,deny
+Deny from all
+</Files>
+
+<Files src/*>
+Deny from all
+</Files>
+
+<Files vendor/*>
+Deny from all
+</Files>
+
+<FilesMatch "\.(json|lock|config.js)$">
+Order allow,deny
+Deny from all
+</FilesMatch>
+
