@@ -1,0 +1,37 @@
+<div id="slide" class="bg-white">
+    <div class="bg-white grid grid-cols-1 max-w-4xl m-auto">
+        <section class="p-4">
+            <header>
+                <h1>What We Didn't Cover...</h1>
+            </header>
+
+            <h2>HTMX's <a href="https://htmx.org/reference/">Reference Documentation</a></h2>
+
+            <ul class="list-disc">
+                <li><b>hx-params</b> - allows filtering of parameters that will be submitted</li>
+                <li><b>hx-preserve</b> - preserves an element between requests</li>
+                <li><b>hx-disable</b> - disables an element from being processed</li>
+                <li><b>hx-vals</b> - allows you to add parameters to an ajax request</li>
+                <li><b>hx-boost</b> - all links target the page</li>
+                <li><b>hx-ws</b> - web sockets</li>
+                <li><b>hx-sse</b> - server side events</li>
+                <li><b>hx-push-url</b> - allows history support</li>
+                <li><b>hx-select</b> - specify which contect you want from a response</li>
+                <li><b>hx-ext</b> - <a href="https://htmx.org/extensions/#included">Extensions</a> - allow json encoding, client side templates, etc.</li>
+                <li><a href="https://htmx.org/events/"><b>Request and Response Events</b></a></li>
+                <li>Validation with Hyperscript and other 3rd party integrations</li>
+            </ul>
+
+        </section>
+    </div>
+
+    <!-- Slide Navigation -->
+    <div class="slide-nav">
+        <button class="slide-nav__button"
+                type="button"
+                hx-get="{{ url_for('update-slide', { 'id' : '10' }) }}"
+                hx-target="#slide">Previous</button>
+
+        <a href="/" class="slide-nav__button">Home</a>
+    </div>
+</div>
